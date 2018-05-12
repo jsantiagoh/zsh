@@ -114,7 +114,6 @@ export FZF_DEFAULT_OPTS="--reverse --inline-info"
 eval $(gopass completion zsh)
 
 # Pure Prompt
-# https://github.com/sindresorhus/pure
 fpath=( $ZSH_CUSTOM/pure $fpath )
 autoload -U promptinit; promptinit
 prompt pure
