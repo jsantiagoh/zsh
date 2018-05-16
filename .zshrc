@@ -9,7 +9,7 @@ esac
 # Configure the shell depending on whatever is set
 # zsh :: Configure oh-my-zsh
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.zsh/oh-my-zsh
+# export ZSH=$HOME/.zsh/oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -62,7 +62,7 @@ ZSH_CUSTOM=~/.zsh/custom
 plugins=(git history docker archlinux fasd vi-mode)
 
 # Start oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 if [[ "Darwin" == $OS_NAME ]]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
@@ -98,7 +98,7 @@ eval $(thefuck --alias)
 
 
 # iTerm2 Integration
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Fzf
 # https://github.com/junegunn/fzf
