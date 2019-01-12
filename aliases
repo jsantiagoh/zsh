@@ -16,9 +16,11 @@
 # alias 9='cd -9'
 # alias _=sudo
 alias afind='ack -il'
+
 alias ec='emacsclient -c'
 alias em=emacs
 alias et='emacsclient -t'
+
 alias g=git
 alias ga='git add'
 alias gaa='git add --all'
