@@ -41,7 +41,8 @@ SPACESHIP_PROMPT_ORDER=(
   exit_code     # Exit code section
   char          # Prompt character
   )
-SPACESHIP_RPROMPT_ORDER=()
+SPACESHIP_RPROMPT_ORDER=(
+  )
 
 # Command completion
 autoload -Uz compinit
