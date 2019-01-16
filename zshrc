@@ -15,8 +15,14 @@ export ZSH_CACHE_DIR=$HOME/.zsh/tmp
 SPACESHIP_DIR_TRUNC_REPO=false
 SPACESHIP_GIT_PREFIX=""
 SPACESHIP_GIT_STATUS_COLOR=green
+# SPACESHIP_KUBECONTEXT_COLOR=grey
 SPACESHIP_KUBECONTEXT_PREFIX=""
 SPACESHIP_KUBECONTEXT_SYMBOL="⎈ "
+SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
+    magenta acceptance
+    green ci
+    red     production
+)
 SPACESHIP_CHAR_SYMBOL="❯ "
 SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_DOCKER_SHOW=false
@@ -55,11 +61,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.history
 
-
-
+# Antibody configuration
 source <(antibody init)
 antibody bundle < ~/.zsh/plugins.txt
-
 
 # Fasd
 # https://github.com/clvv/fasd
@@ -90,11 +94,28 @@ if [ "$(command -v pet)" ]; then
     bindkey '^s' pet-select
 fi
 
+# Bat
+if command -v bat 1>/dev/null 2>&1 ; then
+    export BAT_THEME="OneHalfLight"
+    alias cat=bat
+fi
+
+# Pyenv
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
 
+# direnv
+if command -v direnv 1>/dev/null 2>&1; then
+    eval "$(direnv hook zsh)"
+fi
+
+# fuck
+if command -v fuck 1>/dev/null 2>&1; then
+    eval "$(thefuck --alias)"
+fi
 
 [[ -f ~/.aliases ]] && source ~/.aliases
 
