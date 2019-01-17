@@ -13,8 +13,12 @@ export ZSH_CACHE_DIR=$HOME/.zsh/tmp
 # https://denysdovhan.com/spaceship-prompt/
 # SPACESHIP_DIR_TRUNC=1
 SPACESHIP_DIR_TRUNC_REPO=false
+
 SPACESHIP_GIT_PREFIX=""
 SPACESHIP_GIT_STATUS_COLOR=green
+SPACESHIP_GIT_STATUS_PREFIX=' '
+SPACESHIP_GIT_STATUS_SUFFIX=''
+
 # SPACESHIP_KUBECONTEXT_COLOR=grey
 SPACESHIP_KUBECONTEXT_PREFIX=""
 SPACESHIP_KUBECONTEXT_SYMBOL="⎈ "
@@ -38,7 +42,6 @@ SPACESHIP_PROMPT_ORDER=(
   venv          # virtualenv section
   conda         # conda virtualenv section
   pyenv         # Pyenv section
-  kubecontext
   terraform     # Terraform workspace section
   exec_time     # Execution time
   line_sep      # Line break
@@ -48,6 +51,7 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
   )
 SPACESHIP_RPROMPT_ORDER=(
+  kubecontext   # Kubectl context
   )
 
 # Command completion
@@ -57,9 +61,23 @@ compinit
 # Allow completion to work on aliases
 setopt NO_COMPLETE_ALIASES
 
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt BANG_HIST                 # Treat the '!' character specially during expansion.
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+
 
 # Antibody configuration
 source <(antibody init)
