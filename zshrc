@@ -118,13 +118,6 @@ if command -v bat 1>/dev/null 2>&1 ; then
     alias cat=bat
 fi
 
-# Pyenv
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
-
 # direnv
 if command -v direnv 1>/dev/null 2>&1; then
     eval "$(direnv hook zsh)"
