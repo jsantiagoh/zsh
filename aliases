@@ -180,3 +180,5 @@ alias vim=nvim
 # AWS Aliases
 alias aws-talk='aws-vault exec talk --'
 alias aws-jsh='aws-vault exec jsantiagoh --'
+
+alias krat="rat --mode contexts --cmd='kubectl config get-contexts -o=name'"

@@ -29,16 +29,9 @@ export PATH="$PYENV_ROOT/bin":"$PATH"
 export PYENV_VERSION='3.7.1'
 
 # Kubectl configuration
-[[ -d ~/.kube ]] && export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/config-prod:$HOME/.kube/config-acceptance:$HOME/.kube/config-ci-ie
+# [[ -d ~/.kube ]] && export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/config-prod:$HOME/.kube/config-acceptance:$HOME/.kube/config-ci-ie
 
 # Python binaries, specially virtualenv
 export PATH=$PATH:$(python -m site --user-base)/bin
-
-# Pyenv
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
 
 [[ -d ~/bin ]] && export PATH=$HOME/bin:$PATH
