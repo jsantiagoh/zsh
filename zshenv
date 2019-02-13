@@ -34,4 +34,7 @@ export PYENV_VERSION='3.7.1'
 # Python binaries, specially virtualenv
 export PATH=$PATH:$(python -m site --user-base)/bin
 
+# Don't generate .pyc files
+export PYTHONDONTWRITEBYTECODE=1
+
 [[ -d ~/bin ]] && export PATH=$HOME/bin:$PATH
