@@ -36,6 +36,9 @@ SPACESHIP_PYENV_SHOW=false
 SPACESHIP_VENV_SYMBOL=' '
 SPACESHIP_VENV_PREFIX=''
 
+SPACESHIP_EXEC_TIME_PREFIX=' '
+SPACESHIP_EXEC_TIME_ELAPSED=5
+
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
   user          # Username section
