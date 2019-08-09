@@ -39,6 +39,10 @@ SPACESHIP_VENV_PREFIX=''
 SPACESHIP_EXEC_TIME_PREFIX=' '
 SPACESHIP_EXEC_TIME_ELAPSED=5
 
+SPACESHIP_AWS_SYMBOL=' '
+SPACESHIP_AWS_PREFIX=''
+
+
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
   user          # Username section
@@ -122,7 +126,7 @@ fi
 
 # Bat
 if command -v bat 1>/dev/null 2>&1 ; then
-    export BAT_THEME="OneHalfDark"
+    export BAT_THEME="TwoDark"
     alias cat=bat
 fi
 
@@ -139,8 +143,8 @@ fi
 # Pyenv
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+  # eval "$(pyenv init -)"
+  # eval "$(pyenv virtualenv-init -)"
 fi
 
 

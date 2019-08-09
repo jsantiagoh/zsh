@@ -1,6 +1,6 @@
 # Used for executing user's commands at start, will be sourced when starting as a login shell.
 
-# export LC_ALL=C
+export LANG=C
 
 export OS_NAME=$(uname)
 [ -f $HOME/.localrc ] && source $HOME/.localrc
@@ -32,9 +32,13 @@ export PYENV_VERSION='3.7.1'
 # [[ -d ~/.kube ]] && export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/config-prod:$HOME/.kube/config-acceptance:$HOME/.kube/config-ci-ie
 
 # Python binaries, specially virtualenv
-export PATH=$PATH:$(python -m site --user-base)/bin
+# export PATH=$PATH:$(python -m site --user-base)/bin
 
 # Don't generate .pyc files
 export PYTHONDONTWRITEBYTECODE=1
+
+export AWS_DEFAULT_REGION=eu-west-1
+
+[ -d ~/opt/flutter/bin ] && PATH=$HOME/opt/flutter/bin:$PATH
 
 [[ -d ~/bin ]] && export PATH=$HOME/bin:$PATH
