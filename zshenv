@@ -26,7 +26,8 @@ fi
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin":"$PATH"
-export PYENV_VERSION='3.7.1'
+export PATH=$HOME/.poetry/bin:$PATH
+# export PYENV_VERSION='3.7.1'
 
 # Kubectl configuration
 # [[ -d ~/.kube ]] && export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/config-prod:$HOME/.kube/config-acceptance:$HOME/.kube/config-ci-ie
@@ -39,6 +40,14 @@ export PYTHONDONTWRITEBYTECODE=1
 
 export AWS_DEFAULT_REGION=eu-west-1
 
+# Flutter
 [ -d ~/opt/flutter/bin ] && PATH=$HOME/opt/flutter/bin:$PATH
+
+# Miniconda
+export CONDA_PATH=$HOME/opt/miniconda3
+PATH=$CONDA_PATH/bin:$PATH
+
+# Poetry
+[[ -d ~/.poetry/bin ]] && export PATH="$HOME/.poetry/bin:$PATH"
 
 [[ -d ~/bin ]] && export PATH=$HOME/bin:$PATH

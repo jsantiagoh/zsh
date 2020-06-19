@@ -25,7 +25,7 @@ SPACESHIP_KUBECONTEXT_PREFIX=""
 SPACESHIP_KUBECONTEXT_SYMBOL="⎈ "
 SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
     magenta acceptance
-    green ci
+    green   ci
     red     production
 )
 SPACESHIP_CHAR_SYMBOL="❯ "
@@ -33,13 +33,13 @@ SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_DOCKER_SHOW=false
 
 SPACESHIP_PYENV_SHOW=false
-SPACESHIP_VENV_SYMBOL=' '
+SPACESHIP_VENV_SYMBOL='Ⓟ '
 SPACESHIP_VENV_PREFIX=''
 
-SPACESHIP_EXEC_TIME_PREFIX=' '
+SPACESHIP_EXEC_TIME_PREFIX='⏱  '
 SPACESHIP_EXEC_TIME_ELAPSED=5
 
-SPACESHIP_AWS_SYMBOL=' '
+SPACESHIP_AWS_SYMBOL='☁ '
 SPACESHIP_AWS_PREFIX=''
 
 
@@ -143,7 +143,7 @@ fi
 # Pyenv
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 if command -v pyenv 1>/dev/null 2>&1; then
-  # eval "$(pyenv init -)"
+  eval "$(pyenv init -)"
   # eval "$(pyenv virtualenv-init -)"
 fi
 
@@ -155,3 +155,7 @@ fi
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(direnv hook zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
