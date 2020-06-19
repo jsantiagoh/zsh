@@ -1,6 +1,8 @@
 Personal ZSH Configuration
 ==========================
 
+Requires [antibody](https://getantibody.github.io/)
+
 ## Installation
 
 ```
